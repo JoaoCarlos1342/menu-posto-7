@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú - Posto 7</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f7f3eb;
+        color: #333333;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .language-switcher {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .language-switcher img {
+        width: 32px;
+        height: 22px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: transform 0.2s;
+        object-fit: cover;
+    }
+
+    .language-switcher img:hover {
+        transform: scale(1.1);
+    }
+
+    .menu-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+    }
+
+    .header-logo {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    .header-logo img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .main-cat-title {
+        text-align: center;
+        color: #cc2525;
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #cc2525;
+        padding-bottom: 10px;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+        .grid-layout {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .category-title {
+        color: #cc2525;
+        font-size: 22px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .item-group {
+        border-left: 3px solid #cc2525;
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .item-group::before,
+    .item-group::after {
+        content: '';
+        position: absolute;
+        left: -8px;
+        width: 10px;
+        height: 10px;
+        background-color: #f7f3eb;
+        border: 3px solid #cc2525;
+        transform: rotate(45deg);
+    }
+
+    .item-group::before { top: 0; }
+    .item-group::after { bottom: 0; }
+
+    .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .item-name {
+        flex-grow: 1;
+        padding-right: 15px;
+    }
+
+    .item-price {
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-section img {
+        max-width: 120px;
+    }
+</style>
+</head>
+<body>
+
+<div class="language-switcher">
+    <a href="index.html"><img src="pt_flag.png" alt="PT" title="Português"></a>
+    <a href="en.html"><img src="uk_flag.png" alt="EN" title="English"></a>
+    <a href="fr.html"><img src="frc_flag.png" alt="FR" title="Français"></a>
+</div>
+
+<div class="menu-container">
+    <div class="header-logo">
+        <img src="Logo P7.jpeg" alt="Posto 7 Logo" onerror="this.style.display='none'">
+    </div>
+
+    <div class="main-cat-title">BEBIDAS</div>
+    <div class="grid-layout">
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Cafetería</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Café / Descafeinado</span><span class="item-price">1€</span></div>
+                    <div class="menu-item"><span class="item-name">Café Doble</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Café con Leche (Meia de leite)</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Cortado (Garoto)</span><span class="item-price">1€</span></div>
+                    <div class="menu-item"><span class="item-name">Café con Leche Largo (Galão)</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Té / Infusión</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Café Suave / Infusión de Limón</span><span class="item-price">1€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Agua</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Agua Mineral (0.33L)</span><span class="item-price">1€</span></div>
+                    <div class="menu-item"><span class="item-name">Agua Tónica</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Agua con Gas</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Agua de Sabores</span><span class="item-price">2€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Zumos y Refrescos</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Coca-Cola</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Nestea</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Fanta</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Red Bull</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Zumo Compal</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Pepsi de Barril</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Ginger Ale</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Ginger Beer</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Sirope de Grosella</span><span class="item-price">1.5€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Cervezas</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Caña (Fino)</span><span class="item-price">1.6€</span></div>
+                    <div class="menu-item"><span class="item-name">Copa de Cerveza (Príncipe)</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Copa Tulipa</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Jarra (Pinta)</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Caña Stout (Negra)</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Copa Stout</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Copa Tulipa Stout</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Jarra Stout</span><span class="item-price">4€</span></div>
+                    <div class="menu-item"><span class="item-name">Sidra Somersby</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Somersby (500ml)</span><span class="item-price">5€</span></div>
+                    <div class="menu-item"><span class="item-name">Jarra de Somersby</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Promo Caña</span><span class="item-price">1.2€</span></div>
+                    <div class="menu-item"><span class="item-name">Super Bock</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Coruja</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">1927 Seleção</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Green</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Carlsberg</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Carlsberg 3x2</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Tinto de Verano</span><span class="item-price">3€</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Aperitivos</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Favaios (Vino Moscatel)</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Favaios & Caña</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Martini</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Martini & Caña</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Aperol</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Aperol Spritz</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Oporto Joven</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Oporto Reserva</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Oporto & Tónica</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Campari</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Lillet</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Ricard</span><span class="item-price">6€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Licores</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Licor de Almendra Amarga</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Beirão</span><span class="item-price">4.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Beirão D'Honra</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Fernet</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Frangelico</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Jagermeister</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Licor de Café</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Limoncello</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Luxardo</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Macieira Cream</span><span class="item-price">5€</span></div>
+                    <div class="menu-item"><span class="item-name">Malibu</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Licor de Melocotón</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Pisang Ambon</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Safari</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Sambuca</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">St-Germain</span><span class="item-price">10€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Vinos</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Sangría (Copa)</span><span class="item-price">4€</span></div>
+                    <div class="menu-item"><span class="item-name">Sangría (Jarra 1 Litro)</span><span class="item-price">15€</span></div>
+                    <div class="menu-item"><span class="item-name">Vino (Copa)</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Vino (Botella)</span><span class="item-price">12€</span></div>
+                    <div class="menu-item"><span class="item-name">Vino Espumoso (Cava)</span><span class="item-price">20€</span></div>
+                    <div class="menu-item"><span class="item-name">Sangría de Cava</span><span class="item-price">18€</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-cat-title">LICORES FUERTES</div>
+    <div class="grid-layout">
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Ginebras</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Beefeater</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Beefeater 0.0</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Beefeater Black</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Bombay</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Brockman's</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Fox Tale</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Mare</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Monkey 47</span><span class="item-price">12€</span></div>
+                    <div class="menu-item"><span class="item-name">Oxley</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tanqueray</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tanqueray 10</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Seagram's</span><span class="item-price">7.5€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Vodkas</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Absolut</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Ciroc</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Eristoff Black</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Wyborowa</span><span class="item-price">7.5€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Rones</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Abuelo</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Barceló</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Cacique</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Diplomático</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Havana 3 Años</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Havana 7 Años</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Havana Especial</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Havana Profesional</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Kraken</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Pampero</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Santíssima</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Zacapa</span><span class="item-price">20€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Coñac / Brandy</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Aldeia Velha</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">CR&F</span><span class="item-price">3€</span></div>
+                    <div class="menu-item"><span class="item-name">Martell</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Pisco</span><span class="item-price">12.5€</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Whiskys Normales</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Ballantines</span><span class="item-price">6€</span></div>
+                    <div class="menu-item"><span class="item-name">Bushmills</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Cutty Sark</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Dewars 12 Años</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Jack Daniels</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Jameson</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">J&B</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">The Famous Grouse</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Sexton</span><span class="item-price">10€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Whiskys Añejos / Premium</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Aberfeldy</span><span class="item-price">12.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Cardhu</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Dewar's 15 Años</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Black Barrel</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Black Bush</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Black Label</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Dimple</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Logan</span><span class="item-price">9€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Tequila</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Cascabel</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Olmeca</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Patron</span><span class="item-price">12.5€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Chupitos</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Absenta</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Bomber</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Pastel de Chocolate</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Pastel de Nata</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tequila de la Casa</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Vodka de la Casa</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Chupito Té Verde x4</span><span class="item-price">5€</span></div>
+                    <div class="menu-item"><span class="item-name">Chupito Té Blanco x4</span><span class="item-price">5€</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-cat-title">CÓCTELES</div>
+    <div class="grid-layout">
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Cócteles Clásicos</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Blue Hawaii</span><span class="item-price">7€</span></div>
+                    <div class="menu-item"><span class="item-name">Caipirinha</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Daiquiri</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Dry Martini</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Expresso Martini</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Long Island Iced Tea</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Manhattan</span><span class="item-price">9€</span></div>
+                    <div class="menu-item"><span class="item-name">Margarita</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">MaxiCoffe</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Mojito</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Moscow Mule</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Negroni</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Old Fashioned</span><span class="item-price">-</span></div>
+                    <div class="menu-item"><span class="item-name">Piña Colada</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">See You Tomorrow</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Sex on the Beach</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Side Car</span><span class="item-price">9€</span></div>
+                    <div class="menu-item"><span class="item-name">Yukiguni</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Zombie</span><span class="item-price">10€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Mocktails (Sin Alcohol)</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Virgin Caipirinha</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Virgin Margarita</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Virgin Mojito</span><span class="item-price">10€</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Cócteles de Autor</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Acorde de Avellana (Acorde de Avelã)</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Amor junto al Mar (Amor à Beira Mar)</span><span class="item-price">10€</span></div>
+                    <div class="menu-item"><span class="item-name">Arroz con Leche (Arroz Doce)</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Dulce Ilusión (Doce Ilusão)</span><span class="item-price">7.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Noche de Pesca (Noite de Faina)</span><span class="item-price">7.5€</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-cat-title">COMIDA</div>
+    <div class="grid-layout">
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Helados</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Calippo</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Choc N Ball</span><span class="item-price">2.9€</span></div>
+                    <div class="menu-item"><span class="item-name">Cornetto</span><span class="item-price">1.9€</span></div>
+                    <div class="menu-item"><span class="item-name">Cornetto de Pistacho</span><span class="item-price">2.1€</span></div>
+                    <div class="menu-item"><span class="item-name">Haribo</span><span class="item-price">1.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Magnum Almendra</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Magnum Sandwich</span><span class="item-price">2.2€</span></div>
+                    <div class="menu-item"><span class="item-name">Perna de Pau</span><span class="item-price">1.5€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Tostadas</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Tostada Mixta</span><span class="item-price">4€</span></div>
+                    <div class="menu-item"><span class="item-name">Tostada de Pollo</span><span class="item-price">4.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tostada Serrana</span><span class="item-price">4.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tostada con Tomate</span><span class="item-price">3.5€</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="category">
+                <div class="category-title">Porciones para Compartir</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Alitas de Pollo</span><span class="item-price">4.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Patatas Fritas</span><span class="item-price">2.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Coxinhas (Croquetas de Pollo)</span><span class="item-price">4€</span></div>
+                    <div class="menu-item"><span class="item-name">Mini Samosas</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Mini Croquetas de Carne</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Mini Empanadillas (Rissóis)</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Nachos</span><span class="item-price">4€</span></div>
+                    <div class="menu-item"><span class="item-name">Buñuelos de Bacalao</span><span class="item-price">8€</span></div>
+                    <div class="menu-item"><span class="item-name">Palitos de Mozzarella</span><span class="item-price">3.5€</span></div>
+                    <div class="menu-item"><span class="item-name">Tabla de Embutidos y Quesos</span><span class="item-price">8€</span></div>
+                    <div class="menu-item"><span class="item-name">Tabla P7 (Especial de la Casa)</span><span class="item-price">18€</span></div>
+                </div>
+            </div>
+            <div class="category">
+                <div class="category-title">Para Picar</div>
+                <div class="item-group">
+                    <div class="menu-item"><span class="item-name">Cacahuetes</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Aceitunas</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Altramuces (Tremoços)</span><span class="item-price">2€</span></div>
+                    <div class="menu-item"><span class="item-name">Snack Salado (Empalhada)</span><span class="item-price">2.5€</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <img src="bandeira.png" alt="Bandeira Cuba" onerror="this.style.display='none'">
+        <img src="pagamentos.png" alt="Sem Multibanco ou MBWay" onerror="this.style.display='none'">
+    </div>
+</div>
+
+</body>
+</html>
