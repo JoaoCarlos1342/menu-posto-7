@@ -1,0 +1,23 @@
+name: Atualizar Precos
+on:
+  push:
+    paths:
+      - 'Preços P7.xlsx'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install pandas openpyxl
+      - run: python gerar_menus.py
+      - run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.html
+          git commit -m "Auto: Atualização de preços via Excel" || echo "Sem alterações"
+          git push
