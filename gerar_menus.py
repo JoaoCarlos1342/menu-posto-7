@@ -18,7 +18,7 @@ linguas = {
     'es': {'ficheiro': 'es.html', 'col_nome': 'Nome ES', 'esgotado': 'Agotado', 'aviso_pag': 'SOLO EFECTIVO', 'bandeiras': '<a href="index.html"><img src="pt_flag.png" alt="PT"></a> <a href="en.html"><img src="uk_flag.png" alt="EN"></a> <a href="fr.html"><img src="frc_flag.png" alt="FR"></a>'}
 }
 
-# 3. O Design do Site (CSS embutido)
+# 3. O Design do Site (CSS embutido e Grafismos Vetorizados)
 html_base = """<!DOCTYPE html>
 <html lang="{lang_code}">
 <head>
@@ -93,7 +93,16 @@ for lang_code, info in linguas.items():
                         nome = str(linha['Nome PT']).strip() # Usa PT como fallback
                     
                     preco = str(linha['Preço']).strip()
-                    if preco.lower() in ["x", "0", "indisponível", "indisponivel", "esgotado", "nan"]:
+                    
+                    # Verifica a nova coluna de Esgotado
+                    esta_esgotado = False
+                    if 'Esgotado' in linha.index:
+                        val = str(linha['Esgotado']).strip().lower()
+                        if val in ['x', 'sim', 'v', '1']:
+                            esta_esgotado = True
+                    
+                    # Aplica a lógica: se está esgotado ou se o preço foi posto a zero/x
+                    if esta_esgotado or preco.lower() in ["x", "0", "indisponível", "esgotado", "nan"]:
                         preco_final = info['esgotado']
                     elif preco.replace('.', '', 1).isdigit():
                         preco_final = f"{preco}€"
